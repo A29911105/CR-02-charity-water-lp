@@ -1,47 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity: Water | Your Activism. Real Impact.</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+/* Fonts.. loading Proxima Nova */
+    @font-face {
+      font-family: 'Proxima Nova';
+      src: url('fonts/ProximaNova-Regular.woff2') format('woff2'),
+           url('fonts/ProximaNova-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* loading Avenir */
+    @font-face {
+      font-family: 'Avenir';
+      src: url('fonts/Avenir-Regular.woff2') format('woff2'),
+           url('fonts/Avenir-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+  /* Base Body Styles */
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: 'Proxima Nova', 'Avenir', sans-serif;
+    }
+
+    /* Main section: Background and Layout Container */
+    .hero-section {
+      background: url('img/Madagascar_2019_CG-4246.jpg') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 4rem;
+      position: relative;
+    }
+
+    /* Slightly dark overlay to ensure text readability */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    /* Heading in the top right */
+    .hero-heading {
+      position: absolute;
+      top: 60px; /* this and the one below it 2rem?? */
+      right: 40px;
+      z-index: 2;
+      max-width: 400px;
+      text-align: right;
+    }
+
+    .hero-heading h1 {   /*heading size*/
+      font-size: 3rem;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    /* Bottom right content container: BUTTON + TEXT BLOCK */
+    .hero-bottom-content {
+      position: absolute;
+      right: 40px; /* distance from right edge this is 2rem?? */
+      bottom: 15%;  /* distance from bottom - changed from 40px to 15% to better fit smaller screens */
+      z-index: 2;
+      max-width: 400px;
+      text-align: left;
+    } 
+
+  
+   /* .hero-bottom-content h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-bottom-content p {
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      color: #f1f1f1;
+    }
+    */
+
+    /* input and button container */
+    .form-section {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* space between input and button */
+      margin-bottom: 1rem;
+    }
+
+    /* === Text input field == */
+    .form-section input[type="text"] {
+      padding: 0.8rem 1rem;  /*size of input box*/
+      border: none;
+      border-radius: 5px;
+      width: 220px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    /* === Button styles == */
+    .form-section button {
+      background-color: #e67e22;
+      border: none;
+      color: white;
+      padding: 0.8rem 1.2rem; /*size of button*/
+      font-size: 1rem; /*button text size */
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    /* Button hover effect */
+    .form-section button:hover {
+      background-color: #d36c12;
+    }
+
+    /* FOOTER: logo + Name at bottom left */
+    footer {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      font-size: 1.3rem;
+      color: #fff;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    footer img {
+      width: 45px;
+      height: 55px;
+    }
+
+    /* Responsive tweaks for smaller screens */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 2rem;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-heading h1 
+      .hero-bottom-content {
+        position: static;
+        max-width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 2.3rem; /* might need to remove this */
+      }
+
+      .form-section {
+        flex-direction: column;
+      }
+
+      .form-section input[type="text"],
+      .form-section button {
+        width: 100%;
+      }
+    }
+
+
+  </style>
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <section class="hero-section">
+    <div class="overlay"></div>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+    <!-- top right heading -->
+    <div class="hero-heading">   
+    <h1>YOUR ACTIVISM.<br>REAL IMPACT.</h1>
+    </div>
+    
+    <!--Right-middle to bottom form + text-->
+    <div class="hero-bottom-content">
+ <div class="form-section">
+      <input type="text" placeholder="HELLO IT'S EMMA">
+      <button>Join us</button>
+    </div>
+    <p>TURN YOUR PASSION INTO LASTING CHANGE. TAKE ACTION NOW AND WITNESS LIVES TRANSFORM.</p>
+  </div>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+
+
+    <footer>
+      <img src="img/jerry_can_yellow.png" alt="Charity Water logo">
+    
+    </footer>
+  </section>
 </body>
 </html>
