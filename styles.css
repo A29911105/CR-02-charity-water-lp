@@ -235,38 +235,40 @@ main, .site-footer { max-width: var(--max-width); margin: 0 auto; padding: 20px;
 /* === Top-left Login + Signup Buttons === */
 .auth-buttons {
   position: absolute;
-  top: 40px;      /* same spacing style as other corners */
+  top: 40px;
   left: 40px;
   z-index: 3;
   display: flex;
-  gap: 12px;      /* space between the 2 buttons */
+  gap: 12px;
 }
 
-.auth-buttons button {
-  padding: 0.7rem 1.4rem;
-  font-size: 1rem;
-  border-radius: 5px;
+/* Both buttons inherit global button styling */
+.auth-buttons .btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
   border: none;
-  font-weight: 600;
+  transition: background 0.3s ease, opacity 0.2s ease;
 }
 
-/* Login button (white) */
-.login-btn {
-  background-color: white;
-  color: black;
+/* LOGIN — matches .btn-primary behavior (translucent dark) */
+.auth-buttons .btn-login {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-dark);
+  border: 2px solid rgba(255,255,255,0.25);
+}
+.auth-buttons .btn-login:hover {
+  background: rgba(255, 255, 255, 1);
 }
 
-/* Signup button (orange) */
-.signup-btn {
-  background-color: #e67e22;
+/* SIGN UP — matches .btn-accent (orange CTA) */
+.auth-buttons .btn-signup {
+  background: var(--color-accent);
   color: white;
 }
-
-.signup-btn:hover {
-  background-color: #d36c12;
-}
-
-.login-btn:hover {
-  background-color: #f2f2f2;
+.auth-buttons .btn-signup:hover {
+  opacity: 0.88;
 }
