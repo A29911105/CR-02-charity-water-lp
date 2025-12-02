@@ -231,3 +231,42 @@ main, .site-footer { max-width: var(--max-width); margin: 0 auto; padding: 20px;
     box-sizing: border-box;
   }
 }
+
+/* === Top-left Login + Signup Buttons === */
+.auth-buttons {
+  position: absolute;
+  top: 40px;      /* same spacing style as other corners */
+  left: 40px;
+  z-index: 3;
+  display: flex;
+  gap: 12px;      /* space between the 2 buttons */
+}
+
+.auth-buttons button {
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+/* Login button (white) */
+.login-btn {
+  background-color: white;
+  color: black;
+}
+
+/* Signup button (orange) */
+.signup-btn {
+  background-color: #e67e22;
+  color: white;
+}
+
+.signup-btn:hover {
+  background-color: #d36c12;
+}
+
+.login-btn:hover {
+  background-color: #f2f2f2;
+}
